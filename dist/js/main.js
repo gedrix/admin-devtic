@@ -1,12 +1,14 @@
-const showSidebar = (toggleClass, sidebar) =>{
-    const toggle = document.getElementById(toggleClass),
-    menu = document.getElementById(sidebar)
+const showSidebar = (toogleClass, sidebar, navbar) =>{
+    const toggle = document.getElementById(toogleClass),
+    sideMenu = document.getElementById(sidebar),
+    menu = document.getElementById(navbar)
 
-    if(toggle && menu){
+    if(toggle && sideMenu && menu){
         toggle.addEventListener('click',()=>{
-            menu.classList.toggle('active')
+            sideMenu.classList.toggle('active')
+            menu.classList.toggle('navbarActive')
         })
     }
 }
 
-showSidebar('btnCollapse','sidebar')
+showSidebar('btnCollapse','sidebar', 'menunav')
