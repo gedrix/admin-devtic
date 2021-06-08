@@ -1,25 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600&family=Open+Sans&display=swap');
 :root{
     --primary:#9b5de5;
     --darkPrimary: #783ebe;
-    --bgColor: #e6e6e6;
+    --bgColor: #F2F3F4;
+    --darkBgColor: #EAEDED;
+    --darkerGray: #d4d6d6;
     --alert: #fee440;
     --detail: #00bbf9;
     --success: #00f5d4;
     --txtLigth: #fafafa;
+    --txtBlack: #212121;
 }
 body{
     padding: 0%;
     margin: 0%;
-    font-family: 'Poppins', sans-serif;
-    background-color: var(--bgColor);
+    /* background-color: var(--bgColor); */
+    background: url('../../assets/img/background.svg');
 }
 h1, h2, h3, h4, h5{
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Nunito', sans-serif;
+}
+a,p,span,small,li{
+    font-family: 'Open Sans', sans-serif;
+}
+li{
+    font-size: 1.1em;
 }
 a{
     text-decoration: none;
     transition: all 0.3s;
     color: var(--txtLigth);
+}
+p{
+    text-align: justify;
 }
 a:hover{
     color: var(--txtLigth);
@@ -38,32 +51,87 @@ a:hover{
     color: var(--txtLigth);
     transition: all 0.3s;
     position:fixed;
+    z-index: 100;
 }
 #sidebar .sidebar-header{
     padding: 20px;
     background-color: var(--primary);
+    border-bottom-style: solid;
+    border-bottom-width: thin;
 }
-
+.menu-items{
+    margin-top: 5%;
+}
 #sidebar ul{
     color: var(--txtLigth);
 }
 #sidebar ul li{
     padding: 3%;
+    padding-left: 15%;
 }
 #sidebar ul li:hover{
     background-color: var(--darkPrimary);
     color: var(--txtLigth);
 }
-.content .navbar #btnCollapse{
-    visibility: none !important;
+#sidebar .collapse li{
+    padding-left: 25%;
+    transition: all 0.3s;
 }
 
 
+/* NAVBAR ESTILOS */
 .navbar{
     transition: all 0.3s;
     position: fixed;
     width: 100%;
 }
+.navbar #btnCollapse{
+    color: var(--primary);
+    font-size: 30px;
+    cursor: pointer;
+    transition: all 0.3s;
+    visibility: hidden;
+    position: absolute;
+    z-index: 100;
+    background-color: var(--txtLigth);
+}
+.items-navbar{
+    width: 100%;
+    padding-left: 5%;
+    display: flex;
+}
+.items-navbar div{
+    margin-left: 15px;
+}
+#search{
+    transition: all 0.3s;
+    height: 30px;
+    width: 70%;
+}
+.search{
+    visibility: hidden;
+}
+.busqueda{
+    padding: 1.5%;
+    border-radius: 20px;
+    background-color: var(--darkBgColor);
+    border: none;
+    color: var(--darkPrimary);
+}
+
+.tamañoSearch{
+    width: 150px;
+    transition: all 0.3s;
+}
+.content .itemsMove{
+    margin-left: 230px;
+}
+.items-navbar img{
+    width: 49px;
+    height: 49px;
+    border-radius: 25px;
+}
+
 /* CONTENT STYLES */
 .container-fluid{padding: 0% !important; margin: 0% !important;}
 .content{
@@ -75,65 +143,95 @@ a:hover{
     margin-top: 50px !important;
     transition: all 0.3s;
 }
-
-.navbar #btnCollapse{
-    color: var(--primary);
-    font-size: 30px;
-    cursor: pointer;
-}
-
-.items-navbar img{
-    width: 45px;
-    height: 45px;
-    border-radius: 25px;
-}
-
 /*dropdown*/
 .dropbtn {
-    
     color: rgb(3, 3, 3);
-    padding: 16px;
+    padding: 12px;
     font-size: 16px;
     border: none;
     cursor: pointer;
-    background: rgba( 255, 255, 255, 0.65 );
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-    backdrop-filter: blur( 16.0px );
-    -webkit-backdrop-filter: blur( 16.0px );
-    border-radius: 10px;
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
   }
   
   .dropdown {
     position: relative;
     display: inline-block;
+    justify-content: center;
   }
-  
+  .dropdown:hover .dropbtn{
+      background-color: var(--darkerGray);
+  }
+  .dropdown i{
+      font-size: 25px;
+      background-color: var(--darkBgColor);
+      border-radius: 50px;
+  }
+  .dropdown img{
+      cursor: pointer;
+  }
   .dropdown-content {
-    display: none;
+    background-color: var(--darkBgColor);
     position: absolute;
-    right: 0;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
+      z-index: 100;
+      margin-top: -10px;
+      margin-right: 100px;
+      width: 140px;
+      float: right;
+      padding: 0%;
+      border-radius: 10px;
+      visibility: hidden;
   }
   
-  .dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
+  .activarMenuNoti {
+      visibility: visible;
   }
-  
-  .dropdown-content a:hover {background-color: #f1f1f1;}
-  
-  .dropdown:hover .dropdown-content {
-    display: block;
+  .leftItems{
+      margin-left: 180px;
+      transition: all 0.3s;
   }
-  
-  .dropdown:hover .dropbtn {
-    background-color:  rgba( 255, 255, 255, 0.45 );
+  .menu-perfil{
+      display: flex;
+      justify-content: flex-end;
+  }
+  .items-perfil{
+      background-color: var(--darkBgColor);
+      position: absolute;
+      z-index: 100;
+      margin-top: -10px;
+      margin-right: 50px;
+      width: 140px;
+      float: right;
+      padding: 0%;
+      border-radius: 10px;
+      visibility: hidden;
+  }
+  .items-perfil li{
+    padding: 10px;
+    color: var(--txtBlack);
+  }
+  .items-perfil li:hover{
+    background-color: var(--darkerGray);
+    border-radius: 10px;
+  }
+
+  .dropdown-content li{
+    padding: 10px;
+    color:var(--txtBlack);
+  }
+  .dropdown-content li:hover{
+    background-color: var(--darkerGray);
+    border-radius: 10px;
+  }
+  .showPerfil{
+      visibility: visible;
+  }
+
+  .txtShape{
+    padding: 2%;
+    margin-bottom: 3%;
+    border-radius: 10px;
+    background: #F2F3F4;
+    box-shadow:  5px 5px 13px #c2c2c3,
+             -5px -5px 13px #ffffff;
   }
 
 @media (max-width: 768px) {
@@ -144,9 +242,23 @@ a:hover{
     .content .navbar #btnCollapse{
         visibility: visible !important;
     }
+    .items-navbar{
+        margin-left: 80px !important;
+    }
+    .dropdown-content{
+        margin-right: 0px;
+    }
     #sidebar{
         margin-left: -200px;
         width: 100px !important;
+    }
+    #search{
+        visibility: hidden;
+    }
+    .search{
+        visibility: visible;
+        margin-top: 2%;
+        margin-bottom: 5%;
     }
     .active{
         margin-left: 0px !important;
@@ -156,5 +268,8 @@ a:hover{
     }
     .btnCollapse{
         display: none;
+    }
+    .items-perfil{
+        margin-right: 0px;
     }
 }
