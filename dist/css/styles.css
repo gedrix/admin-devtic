@@ -1,4 +1,7 @@
+/* Fuente traida de google fonts */
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600&family=Open+Sans&display=swap');
+
+/* Variables Globales para los colores que se usaran */
 :root{
     --primary:#9b5de5;
     --darkPrimary: #783ebe;
@@ -11,38 +14,42 @@
     --txtLigth: #fafafa;
     --txtBlack: #212121;
 }
+
+/* Estilos a etiquetas */
 body{
     padding: 0%;
     margin: 0%;
-    /* background-color: var(--bgColor); */
-    background: url('../../assets/img/background.svg');
+    /* Imagen generada en svgbackground */
+    background: url('../../assets/img/background.svg'); 
 }
-h1, h2, h3, h4, h5{
+h1,h2,h3,h4,h5{
     font-family: 'Nunito', sans-serif;
 }
-a,p,span,small,li{
+a,p,span,small{
     font-family: 'Open Sans', sans-serif;
 }
 li{
     font-size: 1.1em;
+    font-family: 'Open Sans', sans-serif;
 }
 a{
     text-decoration: none;
-    transition: all 0.3s;
+    color: var(--txtLigth);
+}
+a:hover{
     color: var(--txtLigth);
 }
 p{
     text-align: justify;
 }
-a:hover{
-    color: var(--txtLigth);
-}
 
-/* SIDEBAR STYLES */
-.wrapper{
+/* estilos wraper */
+.wraper{
     display: flex;
     transition: all 0.3s;
 }
+
+/* Estilos del SideBar */
 #sidebar{
     min-width: 200px;
     max-width: 200px;
@@ -50,7 +57,7 @@ a:hover{
     background-color: var(--primary);
     color: var(--txtLigth);
     transition: all 0.3s;
-    position:fixed;
+    position: fixed;
     z-index: 100;
 }
 #sidebar .sidebar-header{
@@ -61,6 +68,10 @@ a:hover{
 }
 .menu-items{
     margin-top: 5%;
+    color: var(--txtBlack);
+}
+.menu-notification li a{
+    color: var(--txtBlack);
 }
 #sidebar ul{
     color: var(--txtLigth);
@@ -78,8 +89,7 @@ a:hover{
     transition: all 0.3s;
 }
 
-
-/* NAVBAR ESTILOS */
+/* Navbar */
 .navbar{
     transition: all 0.3s;
     position: fixed;
@@ -93,7 +103,6 @@ a:hover{
     visibility: hidden;
     position: absolute;
     z-index: 100;
-    background-color: var(--txtLigth);
 }
 .items-navbar{
     width: 100%;
@@ -103,12 +112,13 @@ a:hover{
 .items-navbar div{
     margin-left: 15px;
 }
+
 #search{
     transition: all 0.3s;
     height: 30px;
     width: 70%;
 }
-.search{
+.search-main{
     visibility: hidden;
 }
 .busqueda{
@@ -119,20 +129,91 @@ a:hover{
     color: var(--darkPrimary);
 }
 
-.tamañoSearch{
-    width: 150px;
-    transition: all 0.3s;
-}
-.content .itemsMove{
-    margin-left: 230px;
-}
-.items-navbar img{
+.items-navbar .dropdown img{
     width: 49px;
     height: 49px;
     border-radius: 25px;
 }
 
-/* CONTENT STYLES */
+/* Dropdown estilos */
+.dropbtn{
+    color: var(--txtBlack);
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+.dropdown{
+    position: relative;
+    display: inline-block;
+    justify-content: center;
+}
+.dropdown:hover .dropbtn{
+    background-color: var(--darkerGray);
+}
+.dropdown i{
+    font-size: 25px;
+    background-color: var(--darkBgColor);
+    border-radius: 50px;
+}
+.dropdown img{
+    cursor: pointer;
+}
+.dropdown-content{
+    background-color: var(--darkBgColor);
+    position: absolute;
+    z-index: 100;
+    margin-top: -10px;
+    margin-right: 100px;
+    width: 140px;
+    float: right;
+    padding: 0%;
+    border-radius: 10px;
+    visibility: hidden;
+}
+.activar-menu-notificacion{
+    visibility: visible;
+}
+.menu-perfil{
+    display: flex;
+    justify-content: flex-end;
+}
+.items-perfil{
+    background-color: var(--darkBgColor);
+    position: absolute;
+    z-index: 100;
+    margin-top: -10px;
+    margin-right: 50px;
+    width: 140px;
+    float: right;
+    padding: 0%;
+    border-radius: 10px;
+    visibility: hidden;
+}
+.items-perfil li{
+    padding: 10px;
+    color: var(--txtBlack) !important;
+}
+.items-perfil li a{
+    color: var(--txtBlack);
+}
+.items-perfil li:hover{
+    background-color: var(--darkerGray);
+    border: 10px;
+}
+.dropdown-content li{
+    padding: 10px;
+    color: var(--txtBlack);
+}
+.dropdown-content li:hover{
+    background-color: var(--darkerGray);
+    border-radius: 10px;
+}
+.show-items-perfil{
+    visibility: visible;
+}
+
+/* Content Main estilos */
 .container-fluid{padding: 0% !important; margin: 0% !important;}
 .content{
     width: 100%;
@@ -143,96 +224,14 @@ a:hover{
     margin-top: 50px !important;
     transition: all 0.3s;
 }
-/*dropdown*/
-.dropbtn {
-    color: rgb(3, 3, 3);
-    padding: 12px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .dropdown {
-    position: relative;
-    display: inline-block;
-    justify-content: center;
-  }
-  .dropdown:hover .dropbtn{
-      background-color: var(--darkerGray);
-  }
-  .dropdown i{
-      font-size: 25px;
-      background-color: var(--darkBgColor);
-      border-radius: 50px;
-  }
-  .dropdown img{
-      cursor: pointer;
-  }
-  .dropdown-content {
-    background-color: var(--darkBgColor);
-    position: absolute;
-      z-index: 100;
-      margin-top: -10px;
-      margin-right: 100px;
-      width: 140px;
-      float: right;
-      padding: 0%;
-      border-radius: 10px;
-      visibility: hidden;
-  }
-  
-  .activarMenuNoti {
-      visibility: visible;
-  }
-  .leftItems{
-      margin-left: 180px;
-      transition: all 0.3s;
-  }
-  .menu-perfil{
-      display: flex;
-      justify-content: flex-end;
-  }
-  .items-perfil{
-      background-color: var(--darkBgColor);
-      position: absolute;
-      z-index: 100;
-      margin-top: -10px;
-      margin-right: 50px;
-      width: 140px;
-      float: right;
-      padding: 0%;
-      border-radius: 10px;
-      visibility: hidden;
-  }
-  .items-perfil li{
-    padding: 10px;
-    color: var(--txtBlack);
-  }
-  .items-perfil li:hover{
-    background-color: var(--darkerGray);
-    border-radius: 10px;
-  }
-
-  .dropdown-content li{
-    padding: 10px;
-    color:var(--txtBlack);
-  }
-  .dropdown-content li:hover{
-    background-color: var(--darkerGray);
-    border-radius: 10px;
-  }
-  .showPerfil{
-      visibility: visible;
-  }
-
-  .txtShape{
+.txt-shape{
     padding: 2%;
     margin-bottom: 3%;
     border-radius: 10px;
-    background: #F2F3F4;
-    box-shadow:  5px 5px 13px #c2c2c3,
-             -5px -5px 13px #ffffff;
-  }
+    background-color: var(--darkBgColor);
+    box-shadow: 5px 5px 13px #c2c2c3,
+                -5px -5px  13px #ffffff
+}
 
 @media (max-width: 768px) {
     .content{
@@ -242,34 +241,33 @@ a:hover{
     .content .navbar #btnCollapse{
         visibility: visible !important;
     }
-    .items-navbar{
-        margin-left: 80px !important;
-    }
-    .dropdown-content{
-        margin-right: 0px;
-    }
     #sidebar{
         margin-left: -200px;
         width: 100px !important;
     }
+    .items-navbar{
+        margin-left: 80px !important;
+    }
     #search{
         visibility: hidden;
     }
-    .search{
+    .search-main{
         visibility: visible;
         margin-top: 2%;
         margin-bottom: 5%;
     }
-    .active{
-        margin-left: 0px !important;
-    }
-    .navbarActive{
-        margin-left: 200px;
-    }
-    .btnCollapse{
-        display: none;
-    }
     .items-perfil{
         margin-right: 0px;
     }
+    .dropdown-content{
+        margin-right: 0px;
+    }
+    /* estilos a ejecutar con js */
+    .active{
+        margin-left: 0px !important;
+    }
+    .navbar-active{
+        margin-left: 200px;
+    }
+    
 }

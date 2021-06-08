@@ -23,75 +23,78 @@
 </head>
 
 <body>
-    <div class="wrapper">
+    <div class="wraper">
+        <!-- SIDEBAR -->
         <nav id="sidebar">
             <div class="sidebar-header">
-                <h4>Admin-DevTic</h4>
+                <h4>Admin-Devtic</h4>
             </div>
             <ul class="list-unstyled menu-items">
-                <li><a href="#"><i class='bx bxs-dashboard'></i> Dashboard</a></li>
-                <li><a href="#"><i class='bx bxs-user-rectangle'></i> Users</a></li>
-                <li><a href="#pagesSubmenu" id="dropdown" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle" aria-controls="pagesSubmenu"><i class='bx bxs-folder'></i> Pages</a></li>
-                <ul class="collapse list-unstyled" id="pagesSubmenu" aria-labelledby="dropdown">
+                <li><a href="#"><i class="bx bxs-dashboard"></i> Dashboard</a></li>
+                <li><a href="#"><i class="bx bxs-user-rectangle"> Users</i></a></li>
+                <li><a href="#subMenu" id="dropdown" data-bs-toggle="collapse" aria-expanded="flase" class="dropdown-toggle" aria-controls="subMenu"><i class="bx bx-folder"> Pages</i></a></li>
+                <ul class="collapse list-unstyled" id="subMenu" aria-labelledby="dropdown">
                     <li><a href="#">Page 1</a></li>
                     <li><a href="#">Page 2</a></li>
-                </ul>
+                </ul>   
             </ul>
         </nav>
+        <!-- NAVBAR -->
         <div class="content container-fluid">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light" id="menunav">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light" id="menuNav">
                 <div class="container-fluid">
-                    <i class='bx bx-menu' id="btnCollapse"></i>
+                    <i class="bx bx-menu" id="btnCollapse"></i>
                     <div class="items-navbar" id="items-navbar">
-                        <!--MENU-->
-                        <input id="search" class="busqueda" type="text" placeholder="search">
+                        <input type="search" name="search" id="search" class="busqueda" placeholder="search...">
                         <div class="dropdown">
-                            <i id="dropbtn" class='dropbtn bx bxs-bell'></i>
+                            <i id="dropbtn" class="dropbtn bx bxs-bell"></i>
                         </div>
-                        
                         <div class="dropdown">
-                            <img id="imgBtn" src="../assets/img/perfil.jpg" alt="">    
+                            <img src="../assets/img/perfil.jpg" alt="Perfil" id="imgBtn">
                         </div>
                     </div>
                 </div>
             </nav>
 
+            <!-- MAIN CONTENT -->
             <section class="container-fluid main-content">
                 <div class="row menu-perfil">
-                    <div id="items-perfil" class="items-perfil">
+                    <div class="items-perfil" id="items-perfil">
                         <ul class="list-unstyled menu-items">
-                            <li>Peril</li>
-                            <li>Datos</li>
+                            <li><a href="#">Perfil</a></li>
+                            <li><a href="#">Datos</a></li>
+                            <li><a href="#">Cerrar Sesión</a></li>
                         </ul>
                     </div>
                     <div id="dropdown-content" class="dropdown-content">
-                        <ul class="list-unstyled menu-items">
-                            <li>Link 1</li>
-                            <li>Link 2</li>
+                        <ul class="list-unstyled menu-notification">
+                            <li><a href="#">Link 1</a></li>
+                            <li><a href="#">Link 2</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="row">
-                    <input class="search busqueda" type="text" placeholder="search">
+                    <input type="search" name="search" id="search-main" class="search-main busqueda" placeholder="search...">
                 </div>
                 <div class="row">
-                    <div class="col-12 txtShape">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, ex nisi! Neque atque deleniti doloribus inventore beatae dolorum at molestias perspiciatis eos perferendis voluptatum exercitationem, rerum, sed laboriosam mollitia saepe.
-                        Dignissimos dolores aspernatur deserunt recusandae optio placeat reprehenderit beatae, alias delectus porro enim aliquam, voluptatibus aut sit praesentium ex doloribus iure similique, quas laudantium? Alias corporis non reiciendis et in?
-                        Atque earum ipsa quod velit sit esse iste ullam at dolore cum, voluptates hic nemo ea ratione blanditiis aperiam assumenda repellat quidem! Sed at et nam quas, optio eum adipisci.</p>
+                    <div class="col-lg-12">
+                        <p class="txt-shape">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse dolorum officiis aliquam? Asperiores debitis harum cum nesciunt rerum facilis delectus doloremque accusantium blanditiis impedit, quibusdam et tenetur ea soluta itaque?
+                        Incidunt ab autem ut deserunt, facere eligendi repellendus consequuntur voluptates voluptatum explicabo, nam tempora expedita minima consequatur harum, veritatis exercitationem distinctio dolore. Culpa cumque distinctio praesentium corporis eius consequuntur officia.
+                        Natus voluptatum repudiandae explicabo recusandae! Vitae tempore quam perspiciatis dignissimos modi. Consectetur repellat modi nihil voluptates ipsum soluta, doloribus labore, hic porro amet officia. Reiciendis aperiam labore neque eos minus!</p>
                     </div>
                     <div class="col-lg-6">
-                        <p class="txtShape">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis eaque itaque amet ex fuga
-                            et soluta modi minus? Natus saepe hic dolores officia odit, asperiores ipsa praesentium
-                            debitis incidunt tempore.</p>
+                        <p class="txt-shape">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae fugit repellendus aliquid odio, quasi minima aut incidunt natus autem quod labore vel deleniti itaque. Sit temporibus aut dignissimos quia qui.
+                            Perspiciatis pariatur architecto saepe, recusandae eos rem laborum itaque optio ea esse, ducimus voluptatem cumque libero! Maiores ipsum eos aliquid vitae cupiditate earum explicabo temporibus iusto. Provident doloribus nostrum magnam.
+                        </p>
                     </div>
                     <div class="col-lg-6">
-                        <p  class="txtShape">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus cupiditate odit molestiae
-                            rerum impedit tempora facilis nobis minima possimus? Quis saepe vitae doloremque, libero
-                            accusamus et illo error nobis amet.</p>
+                        <p class="txt-shape">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam mollitia, ex numquam aliquid amet commodi unde illum laborum? Tempore, impedit inventore odit ab incidunt id ipsa laborum eius hic enim.
+                            Repellendus deleniti vel sint magnam voluptatum eius laborum aperiam repudiandae illo molestiae cumque enim placeat nobis, architecto dolores esse sapiente doloremque numquam commodi accusamus delectus! Cupiditate culpa voluptatem dolorum ratione?
+                        </p>
                     </div>
                 </div>
-
             </section>
         </div>
     </div>

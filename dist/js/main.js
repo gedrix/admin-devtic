@@ -1,41 +1,43 @@
-const showSidebar = (toogleClass, sidebar, btnMenu) =>{
-    const toggle = document.getElementById(toogleClass),
+const showSidebar = (toggleClass, sidebar, btnMenu) =>{
+    const toggle = document.getElementById(toggleClass),
     sideMenu = document.getElementById(sidebar),
-    menu = document.getElementById(btnMenu)
+    btn = document.getElementById(btnMenu)
 
-    if(toggle && sideMenu && menu){
+    if(toggle && sideMenu && btn){
         toggle.addEventListener('click',()=>{
             sideMenu.classList.toggle('active')
-            menu.classList.toggle('bx-x')
-
-            menu.classList.toggle('navbarActive')
+            btn.classList.toggle('bx-x')
+            btn.classList.toggle('navbar-active')
         })
     }
 }
 
-const showNotificacion = () =>{
-    const toggle = document.getElementById('dropbtn'),
-    content2 = document.getElementById('items-perfil'),
-    content = document.getElementById('dropdown-content')
-    if(toggle){
+const showMenuNotification = (btn,itemsList,content) =>{
+    const toggle = document.getElementById(btn),
+    listItems = document.getElementById(itemsList),
+    contents = document.getElementById(content)
+
+    if(toggle && listItems && contents){
         toggle.addEventListener('click',()=>{
-            content.classList.toggle('activarMenuNoti')
-            content2.classList.remove('showPerfil')
-        })
-    }
-}
-const showPerfil = () =>{
-    const toggle = document.getElementById('imgBtn'),
-    content = document.getElementById('items-perfil'),
-    content2 = document.getElementById('dropdown-content')
-    if(toggle){
-        toggle.addEventListener('click',()=>{
-            content.classList.toggle('showPerfil')
-            content2.classList.remove('activarMenuNoti')
+            contents.classList.toggle('activar-menu-notificacion')
+            listItems.classList.remove('show-items-perfil')
         })
     }
 }
 
-showSidebar('btnCollapse','sidebar', 'btnCollapse')
-showNotificacion()
-showPerfil()
+const showMenuPerfil = (btn,itemsList,content) =>{
+    const toggle = document.getElementById(btn),
+    listItems = document.getElementById(itemsList),
+    contents = document.getElementById(content)
+
+    if(toggle && listItems && contents){
+        toggle.addEventListener('click',()=>{
+            listItems.classList.toggle('show-items-perfil')
+            contents.classList.remove('activar-menu-notificacion')
+        })
+    }
+}
+
+showSidebar('btnCollapse', 'sidebar', 'btnCollapse')
+showMenuNotification('dropbtn', 'items-perfil', 'dropdown-content')
+showMenuPerfil('imgBtn', 'items-perfil', 'dropdown-content')
